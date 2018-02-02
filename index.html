@@ -98,10 +98,6 @@
 		    var val = inputs[i]['value'];
 		    formData[name] = val;
 	    }
-		
-                inputs[i].removeEventListener('change', x_widget_submit);
-                inputs[i].addEventListener('change', x_widget_submit);
-            }
             var captcha, phone, required, emptyRequired;
 	    
             required = document.getElementById('x_sms_widget_form').querySelectorAll("[required]");
