@@ -1,5 +1,204 @@
 <!DOCTYPE html>
-<head></head>
+<head>
+<style>
+#x_sms_button_widget.x_sms_dark {
+	background: #ff6700;
+	color: #fff;
+}
+
+#x_sms_button_widget.x_sms_dark input {
+	color: #555;
+}
+
+#x_sms_button_widget.x_sms_dark #x_sms_button_widget_cancel:hover {
+	background: #333;
+}
+
+#x_sms_button_widget_thanks {
+	font-size: 1.5em;
+	padding: .75em .25em 1.5em;
+	line-height: 1.5;
+}
+
+#x_sms_widget.x_sms_no_wrap {
+	border: none;
+	background: none;
+	padding: none;
+	box-shadow: none;
+}
+
+#x_sms_widget label,
+.x_sms_count {
+	font-size: 12px;
+}
+
+.x_sms_counter {
+	position: relative;
+}
+
+.x_sms_counter .x_sms_count {
+	position: absolute;
+	right: 0;
+	top: -25px;
+}
+
+#x_sms_button_widget_cta {
+	width: 100%;
+	font-size: 20px;
+	line-height: 1.2;
+	background: #ff6700;
+	color: #fff;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
+	border-radius: 3px;
+	border: 1px solid rgba(0, 0, 0, .1);
+	border-bottom-width: 3px;
+	padding: 10px;
+	max-width: 250px;
+	margin: 20px auto;
+	text-align: center;
+	cursor: pointer;
+	transition: .2s background-color
+}
+
+#x_sms_button_widget_cta:hover {
+	background-color: #ff6700
+}
+
+#x_sms_button_widget_cta span {
+	font-size: 16px;
+	display: block
+}
+
+#x_sms_button_widget_cancel {
+	cursor: pointer;
+	font-size: 19px;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	top: 0;
+	width: 30px
+}
+
+#x_sms_button_widget_cancel:hover {
+	background: #f2f2f2
+}
+
+#x_sms_button_widget_backdrop {
+	top: -100vh;
+	height: 100vh;
+	position: fixed;
+	width: 100%;
+	background: rgba(0, 0, 0, 0);
+	overflow-y: auto;
+	transition: .2s all
+}
+
+#x_sms_button_widget_backdrop.in {
+	background: rgba(0, 0, 0, .8);
+	left: 0;
+	top: 0;
+	z-index: 9999
+}
+
+#x_sms_button_widget {
+	padding: 10px 30px 0;
+	background: #fff;
+	border: 1px solid #ff6700;
+	width: 100%;
+	max-width: 300px;
+	margin: 20px auto;
+	box-shadow: 0 20px 30px rgba(0, 0, 0, .4);
+	border-radius: 3px;
+	left: 50%;
+	position: absolute;
+	top: 10px;
+	transform: translateX(-50%)
+}
+
+#x_sms_button_widget.in {
+	transform: translateY(0)
+}
+
+#x_sms_button_widget::after {
+	clear: both;
+	content: " ";
+	display: block;
+	width: 100%
+}
+
+#x_sms_button_widget_title {
+	font-size: 26px;
+	line-height: 1.2;
+	padding: 10px 0;
+}
+
+#x_sms_button_widget_desc {
+	font-size: 14px;
+	line-height: 1.2;
+	opacity: .8;
+	margin-bottom: 10px
+}
+
+#x_sms_button_widget_terms {
+	font-size: 11px;
+	line-height: 1.2;
+	opacity: .6
+}
+
+.x_sms_button_widget_input[type=text] {
+	border: 1px solid #d5d5d5;
+	font-size: 12px;
+	font-family: arial, sans-serif;
+	display: block;
+	width: 100%;
+	line-height: 25px;
+	height: auto;
+	padding: 5px;
+	box-shadow: inset 1px 1px 2px rgba(0, 0, 0, .15)
+}
+
+.x_sms_button_widget_error.x_sms_button_widget_input[type=text] {
+	border-color: #e74c3c
+}
+
+.x_sms_button_widget_group {
+	margin-bottom: 10px;
+	clear: both;
+	float: left;
+	width: 100%
+}
+
+.x_sms_button_widget_group_part_100 {
+	float: left;
+	width: 100%
+}
+
+.x_sms_button_widget_group_part_50 {
+	width: 48%;
+	float: left
+}
+
+.x_sms_button_widget_group_part_50:last-child {
+	float: right
+}
+
+#x_sms_button_widget_btn {
+	width: 100%;
+	font-size: 16px;
+	line-height: 1.2;
+	background: #ff6700;
+	color: #fff;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, .05);
+	border-radius: 3px;
+	border: 1px solid rgba(0, 0, 0, .1);
+	border-bottom-width: 3px;
+	padding: 10px 0
+}
+
+</style>
+</head>
 <div id="x_sms_button_widget_cta">Join Our<span>Mobile Rewards Club!</span></div>
 <div id="x_sms_button_widget_backdrop" class="">
    <div id="x_sms_button_widget" class="">
@@ -161,9 +360,8 @@ function x_sms_widget_hide() {
 	document.getElementById('x_sms_button_widget_backdrop').classList.remove('in');
 }
 document.getElementById('x_sms_button_widget_cta').addEventListener('click', x_sms_widget_show);
-document.getElementById('x_sms_button_widget_cancel').addEventListener('click', x_sms_widget_hide); <
-/script>
-      <style>#x_sms_button_widget.x_sms_dark{background: #ff6700;color: #fff;}#x_sms_button_widget.x_sms_dark input{color:#555;}#x_sms_button_widget.x_sms_dark #x_sms_button_widget_cancel:hover {background: #333;}#x_sms_button_widget_thanks {font-size: 1.5em; padding: .75em .25em 1.5em; line-height: 1.5;}#x_sms_widget.x_sms_no_wrap{border:none;background:none;padding:none;box-shadow:none;}#x_sms_widget label,.x_sms_count{font-size: 12px;}.x_sms_counter{position: relative;}.x_sms_counter .x_sms_count{position:absolute;right:0;top:-25px;}#x_sms_button_widget_cta{width:100%;font-size:20px;line-height:1.2;background:#ff6700;color:#fff;text-shadow:1px 1px 0 rgba(0,0,0,.1);border-radius:3px;border:1px solid rgba(0,0,0,.1);border-bottom-width:3px;padding:10px;max-width:250px;margin:20px auto;text-align:center;cursor:pointer;transition:.2s background-color}#x_sms_button_widget_cta:hover{background-color:#ff6700}#x_sms_button_widget_cta span{font-size:16px;display:block}#x_sms_button_widget_cancel{cursor:pointer;font-size:19px;height:30px;line-height:30px;position:absolute;right:0;text-align:center;top:0;width:30px}#x_sms_button_widget_cancel:hover{background:#f2f2f2}#x_sms_button_widget_backdrop{top:-100vh;height:100vh;position:fixed;width:100%;background:rgba(0,0,0,0);overflow-y:auto;transition:.2s all}#x_sms_button_widget_backdrop.in{background:rgba(0,0,0,.8);left:0;top:0;z-index:9999}#x_sms_button_widget{padding:10px 30px 0;background:#fff;border:1px solid #ff6700;width:100%;max-width:300px;margin:20px auto;box-shadow:0 20px 30px rgba(0,0,0,.4);border-radius:3px;left:50%;position:absolute;top:10px;transform:translateX(-50%)}#x_sms_button_widget.in{transform:translateY(0)}#x_sms_button_widget::after{clear:both;content:" ";display:block;width:100%}#x_sms_button_widget_title{font-size:26px;line-height:1.2;padding:10px 0;}#x_sms_button_widget_desc{font-size:14px;line-height:1.2;opacity:.8;margin-bottom:10px}#x_sms_button_widget_terms{font-size:11px;line-height:1.2;opacity:.6}.x_sms_button_widget_input[type=text]{border:1px solid #d5d5d5;font-size:12px;font-family:arial,sans-serif;display:block;width:100%;line-height:25px;height:auto;padding:5px;box-shadow:inset 1px 1px 2px rgba(0,0,0,.15)}.x_sms_button_widget_error.x_sms_button_widget_input[type=text]{border-color:#e74c3c}.x_sms_button_widget_group{margin-bottom:10px;clear:both;float:left;width:100%}.x_sms_button_widget_group_part_100{float:left;width:100%}.x_sms_button_widget_group_part_50{width:48%;float:left}.x_sms_button_widget_group_part_50:last-child{float:right}#x_sms_button_widget_btn{width:100%;font-size:16px;line-height:1.2;background:#ff6700;color:#fff;text-shadow:1px 1px 0 rgba(0,0,0,.05);border-radius:3px;border:1px solid rgba(0,0,0,.1);border-bottom-width:3px;padding:10px 0}</style>
-   </div>
+document.getElementById('x_sms_button_widget_cancel').addEventListener('click', x_sms_widget_hide);
+</script>
+	</div>
 </div>
 </html>
