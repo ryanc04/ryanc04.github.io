@@ -80,9 +80,8 @@
             xhr.onreadystatechange = function() {
                 if(xhr.readyState == 4 && xhr.status == 200) {
                     var response = xhr.responseText;
-                    var captchaValid = response.indexOf('verification string correctly') > -1 ? false : true;
                     var numberValid = response.indexOf('valid 10 digit phone') > -1 ? false : true;
-                    var status = (captchaValid && numberValid) ? true : false;
+                    var status = (numberValid) ? true : false;
                     x_widget_show_results(status);  
                 }
             }
@@ -102,7 +101,7 @@
             inputs[i].addEventListener('change', x_widget_submit);
 		}
 					       
-            var captcha, phone, required, emptyRequired;
+            var phone, required, emptyRequired;
 	    
             required = document.getElementById('x_sms_widget_form').querySelectorAll("[required]");
             emptyRequired = [];
@@ -112,13 +111,7 @@
                     emptyRequired.push(required[i].id);
                 }
             }
-            captcha = document.getElementById('x_sms_widget_captcha').value;
             phone = document.getElementById('x_sms_widget_phone').value;
-            if (captcha.length < 6) {
-                document.getElementById('x_sms_widget_captcha').classList.add('x_sms_widget_error');
-            } else {
-                document.getElementById('x_sms_widget_captcha').classList.remove('x_sms_widget_error');
-            }
             if (phone.length < 10) {
                 document.getElementById('x_sms_widget_phone').classList.add('x_sms_widget_error');
             } else {
@@ -132,7 +125,7 @@
                     document.getElementById(emptyRequired[i]).classList.add('x_sms_widget_error');
                 }
             }
-            if (captcha.length < 6 || phone.length < 10 || emptyRequired.length > 0) {
+            if (phone.length < 10 || emptyRequired.length > 0) {
                 return false; 
             } else {
                 var submitUrl = 'https://www.tcdealz.com/class/client/ajax/ajax_subscriberenter.php';
