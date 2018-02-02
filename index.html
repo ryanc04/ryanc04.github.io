@@ -93,8 +93,7 @@
             }
             xhr.send(formData);
         }    
-	    
-        function x_widget_submit() {
+	function x_widget_submit() {
 		
             var inputs, formData = { ajax: true };
 	    
@@ -104,12 +103,14 @@
 		    var val = inputs[i]['value'];
 		    formData[name] = val;
 	    }
+		
                 inputs[i].removeEventListener('change', x_widget_submit);
                 inputs[i].addEventListener('change', x_widget_submit);
             }
-            var captcha, phone;
-            var required = document.getElementById('x_sms_widget_form').querySelectorAll("[required]");
-            var emptyRequired = [];
+            var captcha, phone, required, emptyRequired;
+	    
+            required = document.getElementById('x_sms_widget_form').querySelectorAll("[required]");
+            emptyRequired = [];
             for (i = 0; i < required.length; i++) {
                 if (required[i].value.length === 0) {
                     document.getElementById(required[i].id).classList.remove('x_sms_widget_error');
@@ -137,9 +138,13 @@
                 }
             }
             if (captcha.length < 6 || phone.length < 10 || emptyRequired.length > 0) {
-                return false;
+                return false; 
             } else {
-                return true;
+                var submitUrl = 'https://www.tcdealz.com/class/client/ajax/ajax_subscriberenter.php';
+                
+                x_widget_send(submitUrl, formData);
+                
+                return false;
             }
         }
     </script>
