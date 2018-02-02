@@ -1,262 +1,164 @@
 <!DOCTYPE html>
-<html>
-<head>
-<link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
-<meta charset=UTF-8>
-<title>FS 64th & Ward Mobile Rewards</title>
-    <style>
-    	#fs_logo {
-    		text-align: center;
-    		margin: 0 0 -20px 0;
-    	}
-    	
-        #fsward_offer {
-            text-align: center;
-            font-size: 24px;
-            padding: 20px 25px 10px 25px;
-        }
-        #message_not_received {
-            text-align: center;
-            font-size: 10px;
-            padding: 0px 40px 10px 40px;
-        }
-        #x_sms_widget_title {
-            font-size: 26px;
-            padding: 10px 0px 10px 0px;
-        }
-        
-        #mobilefyre_logo {
-        	text-align: center;
-        	margin: 0 0 -18px 0;
-        	}
-        	
-        #tag_line {
-        	text-align: center;
-        	font-size: 11px;
-        	font-family: 'Ubuntu', sans-serif;
-        }
-        #x_sms_widget.x_sms_no_wrap {
-            border: none;
-            background: none;
-            padding: none;
-            box-shadow: none;
-        }
-        #x_sms_widget label,
-        .x_sms_count {
-            font-size: 12px;
-        }
-        .x_sms_counter {
-            position: relative;
-        }
-        .x_sms_counter .x_sms_count {
-            position: absolute;
-            right: 0;
-            top: -25px;
-        }
-        #x_sms_widget {
-            padding: 10px 30px 0;
-            background: rgba(255, 255, 255, 1);
-            border: 3px solid #ff6700;
-            width: 100%;
-            max-width: 500px;
-            margin: 20px auto;
-            box-shadow: 0 5px 5px rgba(0, 0, 0, .05);
-            border-radius: 15px
-        }
-        #x_sms_widget::after {
-            clear: both;
-            content: " ";
-            display: block;
-            width: 100%
-        }
-        #x_sms_widget_desc {
-            font-size: 14px;
-            line-height: 1.2;
-            opacity: .8;
-            margin-bottom: 20px
-        }
-        #x_sms_widget_terms {
-            font-size: 11px;
-            line-height: 1.2;
-            opacity: .9
-        }
-        .x_sms_widget_input[type=text] {
-            border: 1px solid #ff6700;
-            font-size: 12px;
-            font-family: arial, sans-serif;
-            display: block;
-            width: 100%;
-            line-height: 25px;
-            height: auto;
-            padding: 5px;
-            box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 1);
-            border-radius: 5px
-        }
-        .x_sms_widget_error.x_sms_widget_input[type=text] {
-            border-color: #ff6700
-        }
-        .x_sms_widget_group {
-            margin-bottom: 10px;
-            clear: both;
-            float: left;
-            width: 100%
-        }
-        .x_sms_widget_group_part_100 {
-            float: left;
-            width: 100%
-        }
-        .x_sms_widget_group_part_50 {
-            width: 48%;
-            float: left
-        }
-        .x_sms_widget_group_part_50:last-child {
-            float: right
-        }
-        #x_sms_widget_btn {
-            width: 100%;
-            font-family: 'Ubuntu', sans-serif;
-            font-size: 28px;
-            line-height: 1.2;
-            background: #ff6700;
-            color: #fff;
-            text-shadow: 1px 1px 0 rgba(0, 0, 0, .05);
-            border-radius: 3px;
-            border: 1px solid rgba(0, 0, 0, .6);
-            border-bottom-width: 3px;
-            padding: 10px 0
-        }
-</style>
-</head>
-
-<div id="x_sms_widget">
-	<div id="fs_logo">
-    <img src="http://testsite5.mobilefyre.net/wp-content/uploads/2018/01/Unknown.png" alt="" width="367" height="137" />
-    </div>
-    <div id="fsward_offer">Join NOW and get an instant coupon for $2 off your next service!</div>
-    <div id="message_not_received">You will receive the coupon via text message.  If you DO NOT receive the coupon, please contact your carrier and have them remove any short code message block that may be on your account.</div>
-    <form method="POST" action="https://www.tcdealz.com/subscriberenter/" id="x_sms_widget_form" onsubmit="return x_widget_submit();" novalidate="">
-	<input name="campaign_id" type="hidden" value="87780">
-        <div id="x_sms_widget_title">Upgrade today!</div>
-        <div id="x_sms_widget_desc" style="display: block;">Clear your Inbox and get the most exclusive offers from Fantastic Sams 64th and Ward sent right to your mobile phone!  You'll ONLY receive exclusive offers from this location, opt-out anytime.</div>
-        <div class="x_sms_widget_group x_sms_widget_fname" style="display: block;"><label for="x_sms_widget_fname">First Name</label>
-            <input id="x_sms_widget_fname" class="x_sms_widget_input" name="fname" size="10" type="text" placeholder="Your first name" /></div>
-        <div class="x_sms_widget_group x_sms_widget_lname" style="display: none;"><label for="x_sms_widget_lname">Last Name</label>
-            <input id="x_sms_widget_lname" class="x_sms_widget_input" name="lname" size="10" type="text" placeholder="Your last name" /></div>
-        <div class="x_sms_widget_group"><label for="x_sms_widget_phone">Mobile Phone Number</label>
-            <input id="x_sms_widget_phone" class="x_sms_widget_input" name="phone" required="" size="10" type="text" placeholder="Your mobile number" /></div>
-        <div class="x_sms_widget_group x_sms_widget_email" style="display: block;"><label for="x_sms_widget_email">Email Address</label>
-            <input id="x_sms_widget_email" class="x_sms_widget_input" name="email" size="10" type="text" placeholder="Your email address" /></div>
-        <div class="x_sms_widget_group x_sms_widget_message" style="display: none;">
-            <label for="x_sms_widget_message">Message</label>
-            <div class="x_sms_counter"><span class="x_sms_count">0/160</span>
-                <input id="x_sms_widget_message" class="x_sms_widget_input text-limited" maxlength="160" name="message" size="10" type="text" placeholder="Your message" /></div>
-        </div>
-	    
-        <div class="x_sms_widget_group">
-            <div class="x_sms_widget_group_part_100"><input id="x_sms_widget_btn" type="submit" value="Let's GO!" /></div>
-        </div>
-        <div class="x_sms_widget_group">
-            <p id="x_sms_widget_terms">You may receive up to 6 messages per month. Msg and data rates apply. Email support@loyll.com for support. Text STOP to stop. <a title="Click here to read our Privacy Policy" href="https://www.tcdealz.com/terms-and-privacy/" target="_blank" rel="noopener">Privacy Policy</a> | <a title="Click here to read our Terms and Conditions" href="https://www.tcdealz.com/terms-and-privacy/" target="_blank" rel="noopener">Terms and Conditions</a></p>
-        </div>
-        <div id= "mobilefyre_logo">
-        <img src="http://testsite5.mobilefyre.net/wp-content/uploads/2017/08/16-03-25-mobilefyre-logo-v1-e1516733518326.jpg" alt="mobilefYre" width="200" height="36"/>       
-		</div>
-		
-		<div id= "tag_line"><p>Safe, Secure, Savings.</p>
-		</div>
-		
-    </form>
-    <script type="text/javascript">
-        function x_widget_updateTextLimits() {
-            var el = document.getElementById('x_sms_widget_message');
-            var val = el.value;
-            var max = el.attributes.maxlength.value;
-            var curLen = val.length;
-            var display = curLen + '/' + max;
-            var counter = el.previousSibling.previousSibling;
-            counter.firstChild.nodeValue = display;
-            if (curLen > max) {
-                counter.classList.add('text-danger');
-            } else {
-                counter.classList.remove('text-danger');
-            }
-        }
-        x_widget_updateTextLimits();
-	
-	function x_widget_show_results(valid){
-            if (valid){
-                document.getElementById('x_sms_widget_form').style.display = 'none';
-                document.getElementById('x_sms_widget_thanks').style.display = 'block';
-            }    
-	}
-	    
-	function x_widget_send(url, data){
-            var xhr, formData = '';
-            
-            for (item in data){
-                formData += item + '=' + data[item] + '&';
-            }
-            xhr = new XMLHttpRequest();
-            xhr.open("POST", url, true);
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function() {
-                if(xhr.readyState == 4 && xhr.status == 200) {
-                    var response = xhr.responseText;
-                    var numberValid = response.indexOf('valid 10 digit phone') > -1 ? false : true;
-                    var status = (numberValid) ? true : false;
-                    x_widget_show_results(status);  
-                }
-            }
-            xhr.send(formData);
-        }    
-	function x_widget_submit() {
-		
-            var inputs, formData = { ajax: true };
-	    
-	    inputs = document.querySelectorAll('#x_sms_widget_form input');
-            for (var i = 0; i < inputs.length; i++) {
-		    var name = inputs[i]['name'];
-		    var val = inputs[i]['value'];
-		    formData[name] = val;
-	    }
-            inputs[i].removeEventListener('change', x_widget_submit);
-            inputs[i].addEventListener('change', x_widget_submit);
-		}
-					       
-            var phone, required, emptyRequired;
-	    
-            required = document.getElementById('x_sms_widget_form').querySelectorAll("[required]");
-            emptyRequired = [];
-            for (i = 0; i < required.length; i++) {
-                if (required[i].value.length === 0) {
-                    document.getElementById(required[i].id).classList.remove('x_sms_widget_error');
-                    emptyRequired.push(required[i].id);
-                }
-            }
-            phone = document.getElementById('x_sms_widget_phone').value;
-            if (phone.length < 10) {
-                document.getElementById('x_sms_widget_phone').classList.add('x_sms_widget_error');
-            } else {
-                document.getElementById('x_sms_widget_phone').classList.remove('x_sms_widget_error');
-            }
-            for (i = 0; i < required.length; i++) {
-                document.getElementById(required[i].id).classList.remove('x_sms_widget_error');
-            }
-            if (emptyRequired.length > 0) {
-                for (i = 0; i < emptyRequired.length; i++) {
-                    document.getElementById(emptyRequired[i]).classList.add('x_sms_widget_error');
-                }
-            }
-            if (phone.length < 10 || emptyRequired.length > 0) {
-                return false; 
-            } else {
-                var submitUrl = 'https://www.tcdealz.com/class/client/ajax/ajax_subscriberenter.php';
-                
-                x_widget_send(submitUrl, formData);
-                
-                return false;
-            }
-        }
-    </script>
+<head></head>
+<div id="x_sms_button_widget_cta">Join Our<span>Mobile Rewards Club!</span></div>
+<div id="x_sms_button_widget_backdrop" class="">
+   <div id="x_sms_button_widget" class="">
+      <div id="x_sms_button_widget_thanks" style="display: none;">Thank you for joining - you will receive a confirmation text shortly!</div>
+      <form id="x_sms_button_widget_form" method="POST" action="https://www.tcdealz.com/class/client/ajax/ajax_subscriberenter.php" onsubmit="return x_button_widget_submit();" novalidate="">
+         <input type="hidden" name="campaign_id" value="84000">
+         <span id="x_sms_button_widget_cancel">×</span>
+         <div id="x_sms_button_widget_title">Earn Rewards</div>
+         <div id="x_sms_button_widget_desc">Enter your details to join our Mobile Rewards Program!</div>
+         <div class="x_sms_widget_group x_sms_button_widget_group x_sms_widget_fname">
+            <label for="x_sms_button_widget_fname">First Name</label>
+            <input type="text" id="x_sms_button_widget_fname" name="fname" size="10" class="x_sms_button_widget_input x_sms_widget_fname" placeholder="Your first name">
+         </div>
+         <div class="x_sms_widget_group x_sms_button_widget_group x_sms_widget_lname" style="display:none;">
+            <label for="x_sms_button_widget_lname">Last Name</label>
+            <input type="text" id="x_sms_button_widget_lname" name="lname" size="10" class="x_sms_button_widget_input x_sms_widget_lname" placeholder="Your last name">
+         </div>
+         <div class="x_sms_widget_group x_sms_button_widget_group">
+            <label for="x_sms_button_widget_phone">Phone</label>
+            <input type="text" id="x_sms_button_widget_phone" name="phone" size="10" class="x_sms_button_widget_input x_sms_widget_phone" placeholder="Your cell number" required="">
+         </div>
+         <div class="x_sms_widget_group x_sms_button_widget_group x_sms_widget_email">
+            <label for="x_sms_button_widget_email">Email Address</label>
+            <input type="text" id="x_sms_button_widget_email" name="email" size="10" class="x_sms_button_widget_input x_sms_widget_email" placeholder="Your email address">
+         </div>
+         <div class="x_sms_widget_group x_sms_button_widget_group x_sms_widget_message" style="display: none;">
+            <label for="x_sms_button_widget_message">Message</label>
+            <div class="x_sms_counter">
+               <span class="x_sms_count">0/160</span>
+               <input type="text" id="x_sms_button_widget_message" name="message" size="10" class="x_sms_button_widget_input x_sms_widget_message text-limited" placeholder="Your message" maxlength="160" onkeyup="x_button_widget_updateTextLimits()">
+            </div>
+         </div>
+         <div class="x_sms_widget_group x_sms_button_widget_group">
+            <label for="x_sms_button_widget_captcha" class="x_sms_button_widget_group_part_100">Enter the Security Code</label>
+            <div class="x_sms_button_widget_group_part_50">
+               <img src="https://www.tcdealz.com/class/tools/captcha.php" alt="Captcha" style="border:none;">
+            </div>
+            <div class="x_sms_button_widget_group_part_50">
+               <input type="text" id="x_sms_button_widget_captcha" name="captcha" size="6" class="x_sms_button_widget_input">
+            </div>
+         </div>
+         <div class="x_sms_widget_group x_sms_button_widget_group">
+            <div class="x_sms_button_widget_group_part_100">
+               <input id="x_sms_button_widget_btn" type="submit" value="Sign Up">    
+            </div>
+         </div>
+         <div class="x_sms_widget_group x_sms_button_widget_group">
+            <p id="x_sms_button_widget_terms">You will receive up to 4 messages per month. Msg and data rates apply. Text STOP to stop. <a target="_blank" href="https://www.tcdealz.com/mobilefyre-privacy-policy/" title="Click here to read our Privacy Policy">Privacy Policy</a> | <a target="_blank" href="https://www.tcdealz.com/mobilefyre-terms/" title="Click here to read our Terms and Conditions">Terms and Conditions</a></p>
+         </div>
+      </form>
+      <script type="text/javascript">
+         function x_button_widget_updateTextLimits(){
+             var el = document.getElementById('x_sms_button_widget_message');
+             var val = el.value;
+             var max = el.attributes.maxlength.value;
+             var curLen = val.length;
+             var display = curLen + '/' + max;
+             var counter = el.previousSibling.previousSibling;
+             counter.firstChild.nodeValue = display;
+             if(curLen > max){
+                 counter.classList.add('text-danger');
+             } else {
+                 counter.classList.remove('text-danger');
+             }
+         }
+         x_button_widget_updateTextLimits();
+         
+         function x_button_widget_show_results(valid){
+             if (valid){
+                 document.getElementById('x_sms_button_widget_form').style.display = 'none';
+                 document.getElementById('x_sms_button_widget_thanks').style.display = 'block';
+             }
+         }
+         function x_button_widget_send(url, data){
+             var xhr, formData = '';
+             
+             for (item in data){
+                 formData += item + '=' + data[item] + '&';
+             }
+             console.log(url+'?'+formData);
+             xhr = new XMLHttpRequest();
+             xhr.open("POST", url, true);
+             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+             xhr.onreadystatechange = function() {
+                 if(xhr.readyState == 4 && xhr.status == 200) {
+                     var response = xhr.responseText;
+                     var captchaValid = response.indexOf('verification string correctly') > -1 ? false : true;
+                     var numberValid = response.indexOf('valid 10 digit phone') > -1 ? false : true;
+                     var status = (captchaValid && numberValid) ? true : false;
+                     x_button_widget_show_results(status);
+                 }
+             }
+             xhr.send(formData);
+         }
+         
+         function x_button_widget_submit(){
+             var inputs, formData = { ajax: true };
+             
+             inputs = document.querySelectorAll('#x_sms_button_widget_form input');
+             
+             for (var i=0; i<inputs.length; i++) {
+                 var name = inputs[i]['name'];
+                 var val  = inputs[i]['value'];
+                 formData[name] = val;
+             }
+         
+             var captcha, phone, required, emptyRequired;
+             
+             required = document.getElementById('x_sms_button_widget_form').querySelectorAll("[required]");
+             emptyRequired = [];
+             for(i=0;i < required.length; i++){
+                 if(required[i].value.length === 0){
+                     emptyRequired.push(required[i].id);
+                 }
+             }
+             captcha = document.getElementById('x_sms_button_widget_captcha').value;
+             phone = document.getElementById('x_sms_button_widget_phone').value;
+             
+             if (captcha.length < 6) {
+                 document.getElementById('x_sms_button_widget_captcha').classList.add('x_sms_button_widget_error');
+             } else {
+                 document.getElementById('x_sms_button_widget_captcha').classList.remove('x_sms_button_widget_error');
+             }
+             
+             if (phone.length < 10){
+                 document.getElementById('x_sms_button_widget_phone').classList.add('x_sms_button_widget_error');
+             } else {
+                 document.getElementById('x_sms_button_widget_phone').classList.remove('x_sms_button_widget_error');
+             }
+             
+             for(i=0;i < required.length; i++){
+                 document.getElementById(required[i].id).classList.remove('x_sms_button_widget_error');
+             }
+             
+             if (emptyRequired.length > 0){
+                 for(i=0;i < emptyRequired.length; i++){
+                     document.getElementById(emptyRequired[i]).classList.add('x_sms_button_widget_error');
+                 }
+             }
+             if (captcha.length < 6 || phone.length < 10 || emptyRequired.length > 0) {
+                 return false; 
+             } else {
+                 var submitUrl = 'https://www.tcdealz.com/class/client/ajax/ajax_subscriberenter.php';
+                 
+                 x_button_widget_send(submitUrl, formData);
+                 
+                 return false;
+             }
+         }
+         function x_sms_widget_show(){
+             document.getElementById('x_sms_button_widget_backdrop').classList.add('in');
+         }
+         function x_sms_widget_hide(){
+             document.getElementById('x_sms_button_widget_backdrop').classList.remove('in');
+         }
+         document.getElementById('x_sms_button_widget_cta').addEventListener('click', x_sms_widget_show);
+         document.getElementById('x_sms_button_widget_cancel').addEventListener('click', x_sms_widget_hide);
+      </script>
+      <style>#x_sms_button_widget.x_sms_dark{background: #ff6700;color: #fff;}#x_sms_button_widget.x_sms_dark input{color:#555;}#x_sms_button_widget.x_sms_dark #x_sms_button_widget_cancel:hover {background: #333;}#x_sms_button_widget_thanks {font-size: 1.5em; padding: .75em .25em 1.5em; line-height: 1.5;}#x_sms_widget.x_sms_no_wrap{border:none;background:none;padding:none;box-shadow:none;}#x_sms_widget label,.x_sms_count{font-size: 12px;}.x_sms_counter{position: relative;}.x_sms_counter .x_sms_count{position:absolute;right:0;top:-25px;}#x_sms_button_widget_cta{width:100%;font-size:20px;line-height:1.2;background:#ff6700;color:#fff;text-shadow:1px 1px 0 rgba(0,0,0,.1);border-radius:3px;border:1px solid rgba(0,0,0,.1);border-bottom-width:3px;padding:10px;max-width:250px;margin:20px auto;text-align:center;cursor:pointer;transition:.2s background-color}#x_sms_button_widget_cta:hover{background-color:#ff6700}#x_sms_button_widget_cta span{font-size:16px;display:block}#x_sms_button_widget_cancel{cursor:pointer;font-size:19px;height:30px;line-height:30px;position:absolute;right:0;text-align:center;top:0;width:30px}#x_sms_button_widget_cancel:hover{background:#f2f2f2}#x_sms_button_widget_backdrop{top:-100vh;height:100vh;position:fixed;width:100%;background:rgba(0,0,0,0);overflow-y:auto;transition:.2s all}#x_sms_button_widget_backdrop.in{background:rgba(0,0,0,.8);left:0;top:0;z-index:9999}#x_sms_button_widget{padding:10px 30px 0;background:#fff;border:1px solid #ff6700;width:100%;max-width:300px;margin:20px auto;box-shadow:0 20px 30px rgba(0,0,0,.4);border-radius:3px;left:50%;position:absolute;top:10px;transform:translateX(-50%)}#x_sms_button_widget.in{transform:translateY(0)}#x_sms_button_widget::after{clear:both;content:" ";display:block;width:100%}#x_sms_button_widget_title{font-size:26px;line-height:1.2;padding:10px 0;}#x_sms_button_widget_desc{font-size:14px;line-height:1.2;opacity:.8;margin-bottom:10px}#x_sms_button_widget_terms{font-size:11px;line-height:1.2;opacity:.6}.x_sms_button_widget_input[type=text]{border:1px solid #d5d5d5;font-size:12px;font-family:arial,sans-serif;display:block;width:100%;line-height:25px;height:auto;padding:5px;box-shadow:inset 1px 1px 2px rgba(0,0,0,.15)}.x_sms_button_widget_error.x_sms_button_widget_input[type=text]{border-color:#e74c3c}.x_sms_button_widget_group{margin-bottom:10px;clear:both;float:left;width:100%}.x_sms_button_widget_group_part_100{float:left;width:100%}.x_sms_button_widget_group_part_50{width:48%;float:left}.x_sms_button_widget_group_part_50:last-child{float:right}#x_sms_button_widget_btn{width:100%;font-size:16px;line-height:1.2;background:#ff6700;color:#fff;text-shadow:1px 1px 0 rgba(0,0,0,.05);border-radius:3px;border:1px solid rgba(0,0,0,.1);border-bottom-width:3px;padding:10px 0}</style>
+   </div>
 </div>
 </html>
